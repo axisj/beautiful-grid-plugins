@@ -1,5 +1,5 @@
 {
-  "name": "@axisj/beautiful-grid-mantine",
+  "name": "@beautifuljs/grid-mantine",
   "version": "0.1.0",
   "description": "Mantine editor integrations for BeautifulGrid.",
   "license": "Apache-2.0",

@@ -1,11 +1,11 @@
-# @axisj/beautiful-grid-mui
+# @beautifuljs/grid-mui
 
 Material UI editor integrations for [BeautifulGrid](https://bgrid.axisj.com).
 
 ## Installation
 
 ```sh
-pnpm add @axisj/beautiful-grid-mui @mui/material @mui/x-date-pickers beautiful-grid react react-dom
+pnpm add @beautifuljs/grid-mui @mui/material @mui/x-date-pickers beautiful-grid react react-dom
 ```
 
 The initial package structure is ready for plugin implementations. Public APIs will be documented here as they are added.

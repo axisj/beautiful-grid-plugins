@@ -1,23 +1,23 @@
-# @axisj/beautiful-grid-antd
+# @beautifuljs/grid-antd
 
 Ant Design editor integrations for [BeautifulGrid](https://bgrid.axisj.com).
 
 ## Installation
 
 ```sh
-pnpm add @axisj/beautiful-grid-antd antd beautiful-grid react react-dom
+pnpm add @beautifuljs/grid-antd antd beautiful-grid react react-dom
 ```
 
 Import the integration stylesheet once in your application entry point:
 
 ```tsx
-import '@axisj/beautiful-grid-antd/style.css';
+import '@beautifuljs/grid-antd/style.css';
 ```
 
 ## Usage
 
 ```tsx
-import { createAntdSelectEditorPlugin } from '@axisj/beautiful-grid-antd';
+import { createAntdSelectEditorPlugin } from '@beautifuljs/grid-antd';
 
 const statusEditor = createAntdSelectEditorPlugin<Order, Order['status']>({
   id: 'order-status',
