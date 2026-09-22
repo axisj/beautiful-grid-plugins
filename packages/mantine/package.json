@@ -1,7 +1,7 @@
 {
-  "name": "@axisj/beautiful-grid-antd",
+  "name": "@axisj/beautiful-grid-mantine",
   "version": "0.1.0",
-  "description": "Ant Design editor integrations for BeautifulGrid.",
+  "description": "Mantine editor integrations for BeautifulGrid.",
   "license": "Apache-2.0",
   "type": "module",
   "main": "./dist/index.cjs",
@@ -17,8 +17,7 @@
         "types": "./dist/index.d.cts",
         "default": "./dist/index.cjs"
       }
-    },
-    "./style.css": "./dist/index.css"
+    }
   },
   "files": [
     "dist",
@@ -26,22 +25,19 @@
     "NOTICE",
     "THIRD_PARTY_NOTICES.md"
   ],
-  "sideEffects": [
-    "**/*.css"
-  ],
+  "sideEffects": false,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/axisj/beautiful-grid-plugins.git",
-    "directory": "packages/antd"
+    "directory": "packages/mantine"
   },
-  "homepage": "https://github.com/axisj/beautiful-grid-plugins/tree/main/packages/antd#readme",
+  "homepage": "https://github.com/axisj/beautiful-grid-plugins/tree/main/packages/mantine#readme",
   "bugs": {
     "url": "https://github.com/axisj/beautiful-grid-plugins/issues"
   },
   "keywords": [
     "beautiful-grid",
-    "antd",
-    "ant-design",
+    "mantine",
     "react",
     "data-grid",
     "editor"
@@ -58,12 +54,10 @@
     "prepack": "pnpm build"
   },
   "peerDependencies": {
-    "antd": ">=5 <7",
+    "@mantine/core": ">=8 <10",
+    "@mantine/dates": ">=8 <10",
     "beautiful-grid": ">=1 <2",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"
-  },
-  "dependencies": {
-    "dayjs": "^1.11.18"
   }
 }

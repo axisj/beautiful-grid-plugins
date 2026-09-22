@@ -1,0 +1,131 @@
+.bgrid-shadcn-trigger {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0 6.5px;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: inherit;
+  font: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.bgrid-shadcn-trigger-label {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bgrid-shadcn-trigger-icon,
+.bgrid-shadcn-option svg,
+.bgrid-shadcn-tree-option svg,
+.bgrid-shadcn-calendar-header svg,
+.bgrid-shadcn-search svg {
+  width: 14px;
+  height: 14px;
+  flex: 0 0 14px;
+}
+
+.bgrid-shadcn-popover {
+  font-family: var(--bgrid-font-family, inherit);
+  font-size: var(--bgrid-font-size, 13px);
+}
+
+.bgrid-shadcn-list {
+  display: flex;
+  min-width: 150px;
+  max-height: 240px;
+  flex-direction: column;
+  gap: 2px;
+  overflow-y: auto;
+}
+
+.bgrid-shadcn-option,
+.bgrid-shadcn-tree-option {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+  min-height: 30px;
+  padding: 4px 8px;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: inherit;
+  text-align: left;
+  cursor: pointer;
+}
+
+.bgrid-shadcn-option:hover,
+.bgrid-shadcn-tree-option:hover,
+.bgrid-shadcn-option[data-selected],
+.bgrid-shadcn-tree-option[data-selected] {
+  background: var(--accent, #f1f5f9);
+  color: var(--accent-foreground, #0f172a);
+}
+
+.bgrid-shadcn-option:disabled,
+.bgrid-shadcn-tree-option:disabled,
+.bgrid-shadcn-calendar-grid button:disabled {
+  cursor: not-allowed;
+  opacity: 0.45;
+}
+
+.bgrid-shadcn-calendar-header,
+.bgrid-shadcn-calendar-header > div {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4px;
+}
+
+.bgrid-shadcn-calendar-header button,
+.bgrid-shadcn-calendar-grid button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  border: 0;
+  border-radius: 4px;
+  background: transparent;
+  color: inherit;
+  cursor: pointer;
+}
+
+.bgrid-shadcn-calendar-header button { width: 28px; height: 28px; }
+.bgrid-shadcn-calendar-grid { display: grid; grid-template-columns: repeat(7, 32px); gap: 2px; margin-top: 6px; }
+.bgrid-shadcn-calendar-grid button { width: 32px; height: 32px; }
+.bgrid-shadcn-calendar-grid button:hover { background: var(--accent, #f1f5f9); }
+.bgrid-shadcn-calendar-grid button[data-selected] { background: var(--primary, #2563eb); color: var(--primary-foreground, white); }
+.bgrid-shadcn-calendar-grid button[data-outside] { opacity: 0.4; }
+.bgrid-shadcn-weekdays { color: var(--muted-foreground, #64748b); text-align: center; font-size: 11px; }
+
+.bgrid-shadcn-color-swatch { width: 14px; height: 14px; border: 1px solid currentColor; border-radius: 3px; }
+.bgrid-shadcn-palette { display: grid; grid-template-columns: repeat(4, 1fr); gap: 8px; }
+.bgrid-shadcn-palette button { display: flex; height: 32px; align-items: center; justify-content: center; border: 1px solid rgb(0 0 0 / 12%); border-radius: 5px; cursor: pointer; }
+.bgrid-shadcn-palette svg { width: 16px; height: 16px; color: white; filter: drop-shadow(0 1px 1px rgb(0 0 0 / 60%)); }
+.bgrid-shadcn-inline-form { display: flex; gap: 6px; margin-top: 10px; padding-top: 10px; border-top: 1px solid var(--border, #e2e8f0); }
+.bgrid-shadcn-inline-form input,
+.bgrid-shadcn-search input,
+.bgrid-shadcn-time-columns select { min-width: 0; height: 32px; border: 1px solid var(--input, #cbd5e1); border-radius: 5px; background: var(--background, white); color: inherit; padding: 0 8px; }
+.bgrid-shadcn-inline-form button,
+.bgrid-shadcn-primary-button { border: 0; border-radius: 5px; background: var(--primary, #2563eb); color: var(--primary-foreground, white); padding: 0 12px; cursor: pointer; }
+.bgrid-shadcn-cascader { display: flex; gap: 4px; }
+.bgrid-shadcn-cascader > .bgrid-shadcn-list + .bgrid-shadcn-list { border-left: 1px solid var(--border, #e2e8f0); padding-left: 4px; }
+.bgrid-shadcn-time-columns { display: grid; grid-template-columns: 1fr 1fr; gap: 8px; }
+.bgrid-shadcn-time-columns label { display: flex; flex-direction: column; gap: 4px; color: var(--muted-foreground, #64748b); font-size: 11px; }
+.bgrid-shadcn-primary-button { width: 100%; height: 32px; margin-top: 10px; }
+.bgrid-shadcn-search { display: flex; align-items: center; gap: 6px; margin-bottom: 8px; }
+.bgrid-shadcn-search input { width: 100%; }
+.bgrid-shadcn-tree { display: flex; max-height: 260px; flex-direction: column; overflow-y: auto; }
+.bgrid-shadcn-tree-option { width: 100%; justify-content: flex-start; }
+.bgrid-shadcn-tree-option > svg:last-child { margin-left: auto; }
+.bgrid-shadcn-tree-spacer { width: 14px; }

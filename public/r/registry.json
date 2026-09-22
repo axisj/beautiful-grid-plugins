@@ -1,0 +1,75 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "beautiful-grid",
+  "homepage": "https://bgrid.axisj.com",
+  "items": [
+    {
+      "name": "beautiful-grid-editors",
+      "title": "BeautifulGrid Shadcn Editors",
+      "description": "Select, date, color, cascader, time, and tree-select editors for BeautifulGrid.",
+      "dependencies": [
+        "@radix-ui/react-popover",
+        "beautiful-grid",
+        "lucide-react"
+      ],
+      "files": [
+        {
+          "path": "registry/shadcn/beautiful-grid-editors/editor-popover.tsx",
+          "type": "registry:component",
+          "target": "components/beautiful-grid/editor-popover.tsx"
+        },
+        {
+          "path": "registry/shadcn/beautiful-grid-editors/shared.tsx",
+          "type": "registry:component",
+          "target": "components/beautiful-grid/shared.tsx"
+        },
+        {
+          "path": "registry/shadcn/beautiful-grid-editors/createShadcnSelectEditorPlugin.tsx",
+          "type": "registry:component",
+          "target": "components/beautiful-grid/createShadcnSelectEditorPlugin.tsx"
+        },
+        {
+          "path": "registry/shadcn/beautiful-grid-editors/createShadcnDatePickerEditorPlugin.tsx",
+          "type": "registry:component",
+          "target": "components/beautiful-grid/createShadcnDatePickerEditorPlugin.tsx"
+        },
+        {
+          "path": "registry/shadcn/beautiful-grid-editors/createShadcnColorPickerEditorPlugin.tsx",
+          "type": "registry:component",
+          "target": "components/beautiful-grid/createShadcnColorPickerEditorPlugin.tsx"
+        },
+        {
+          "path": "registry/shadcn/beautiful-grid-editors/createShadcnCascaderEditorPlugin.tsx",
+          "type": "registry:component",
+          "target": "components/beautiful-grid/createShadcnCascaderEditorPlugin.tsx"
+        },
+        {
+          "path": "registry/shadcn/beautiful-grid-editors/createShadcnTimePickerEditorPlugin.tsx",
+          "type": "registry:component",
+          "target": "components/beautiful-grid/createShadcnTimePickerEditorPlugin.tsx"
+        },
+        {
+          "path": "registry/shadcn/beautiful-grid-editors/createShadcnTreeSelectEditorPlugin.tsx",
+          "type": "registry:component",
+          "target": "components/beautiful-grid/createShadcnTreeSelectEditorPlugin.tsx"
+        },
+        {
+          "path": "registry/shadcn/beautiful-grid-editors/editorUtils.ts",
+          "type": "registry:component",
+          "target": "components/beautiful-grid/editorUtils.ts"
+        },
+        {
+          "path": "registry/shadcn/beautiful-grid-editors/index.ts",
+          "type": "registry:component",
+          "target": "components/beautiful-grid/index.ts"
+        },
+        {
+          "path": "registry/shadcn/beautiful-grid-editors/beautiful-grid-editors.css",
+          "type": "registry:style",
+          "target": "components/beautiful-grid/beautiful-grid-editors.css"
+        }
+      ],
+      "type": "registry:component"
+    }
+  ]
+}

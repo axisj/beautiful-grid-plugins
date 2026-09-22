@@ -10,13 +10,26 @@
   },
   "scripts": {
     "build": "pnpm --recursive --if-present run build",
-    "typecheck": "pnpm --recursive --if-present run typecheck",
+    "test": "pnpm build && node --test tests/*.test.mjs",
+    "typecheck": "pnpm --recursive --if-present run typecheck && pnpm typecheck:registry",
+    "typecheck:registry": "tsc -p registry/shadcn/tsconfig.json --noEmit",
+    "check": "pnpm test && pnpm typecheck && pnpm registry:validate && pnpm verify:packages && pnpm verify:registry",
+    "registry:build": "shadcn build registry.json --output public/r",
+    "registry:validate": "shadcn registry validate",
+    "verify:packages": "node scripts/verify-packages.mjs",
+    "verify:registry": "node scripts/verify-registry.mjs",
     "changeset": "changeset",
     "version-packages": "changeset version",
     "release": "pnpm build && changeset publish"
   },
   "devDependencies": {
     "@changesets/cli": "^3.0.3",
+    "@radix-ui/react-popover": "^1.1.15",
+    "@types/react": "^19.2.2",
+    "@types/react-dom": "^19.2.2",
+    "beautiful-grid": "^1.0.18",
+    "lucide-react": "^0.544.0",
+    "shadcn": "^4.21.0",
     "tsup": "^8.5.1",
     "typescript": "^5.9.3"
   }

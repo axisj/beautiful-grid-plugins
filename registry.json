@@ -1,0 +1,6 @@
+{
+  "$schema": "https://ui.shadcn.com/schema/registry.json",
+  "name": "beautiful-grid",
+  "homepage": "https://bgrid.axisj.com",
+  "include": ["registry/shadcn/registry.json"]
+}
