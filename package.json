@@ -1,0 +1,23 @@
+{
+  "name": "beautiful-grid-plugins",
+  "version": "0.0.0",
+  "private": true,
+  "description": "Official plugins and integrations for BeautifulGrid.",
+  "license": "Apache-2.0",
+  "packageManager": "pnpm@10.17.1",
+  "engines": {
+    "node": ">=22"
+  },
+  "scripts": {
+    "build": "pnpm --recursive --if-present run build",
+    "typecheck": "pnpm --recursive --if-present run typecheck",
+    "changeset": "changeset",
+    "version-packages": "changeset version",
+    "release": "pnpm build && changeset publish"
+  },
+  "devDependencies": {
+    "@changesets/cli": "^3.0.3",
+    "tsup": "^8.5.1",
+    "typescript": "^5.9.3"
+  }
+}
