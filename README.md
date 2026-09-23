@@ -7,8 +7,8 @@ Official plugins and integrations for [BeautifulGrid](https://bgrid.axisj.com).
 | Package | Status | Description |
 | --- | --- | --- |
 | [`@beautifuljs/grid-antd`](./packages/antd) | Published | Ant Design editor integrations for BeautifulGrid |
-| [`@beautifuljs/grid-mui`](./packages/mui) | Ready to publish | Material UI Select, DatePicker, ColorPicker, and TimePicker integrations |
-| [`@beautifuljs/grid-mantine`](./packages/mantine) | Ready to publish | Mantine Select, DatePicker, ColorPicker, and TimePicker integrations |
+| [`@beautifuljs/grid-mui`](./packages/mui) | Published | Material UI Select, DatePicker, ColorPicker, and TimePicker integrations |
+| [`@beautifuljs/grid-mantine`](./packages/mantine) | Published | Mantine Select, DatePicker, ColorPicker, and TimePicker integrations |
 
 Shadcn integrations are distributed as source code through the
 [`registry/shadcn`](./registry/shadcn) registry instead of npm.
