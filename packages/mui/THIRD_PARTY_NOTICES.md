@@ -6,6 +6,8 @@ This package integrates with separately distributed dependencies:
 | --- | --- |
 | Material UI | MIT |
 | MUI X Date and Time Pickers (Community) | MIT |
+| Emotion | MIT |
+| Day.js | MIT |
 | React and React DOM | MIT |
 | BeautifulGrid | Apache-2.0 |
 
@@ -14,4 +16,3 @@ have separate commercial license terms. Dependencies remain external imports
 and are subject to their own license terms. Names and trademarks belong to
 their respective owners; this integration does not imply sponsorship or
 endorsement by MUI.
-

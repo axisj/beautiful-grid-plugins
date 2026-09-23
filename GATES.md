@@ -1,30 +1,35 @@
-# Gates: production-ready editor plugin migration
+# Gates: MUI and Mantine editor integrations
 
-OWNS: LICENSE, GATES.md, README.md, package.json, pnpm-lock.yaml, tsconfig.base.json, scripts/**, tests/**, packages/antd/**, packages/mui/package.json, packages/mui/LICENSE, packages/mantine/package.json, packages/mantine/LICENSE, public/**, registry.json, registry/shadcn/**
+OWNS: GATES.md, README.md, package.json, pnpm-lock.yaml, scripts/**, tests/**, packages/mui/**, packages/mantine/**, .changeset/**
 
-Scope: Harden the plugin monorepo and ship complete Ant Design and Shadcn editor integrations migrated from BeautifulGrid without changing the manual initial-publish workflow.
+Scope: Implement production-ready Select, DatePicker, ColorPicker, and TimePicker integrations for MUI and Mantine while excluding Cascader and TreeSelect.
 
 - [x] G0: this ledger defines executable outcome checks without structural errors
   CHECK: node /Users/tom/.agents/skills/unlazy/scripts/gate-lint.mjs GATES.md
   EXPECT: LINT OK
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/tom/Development/axisj/beautiful-grid-plugins; path=67da5b2427f3/34 entries; EXPECT=matched; output-sha256=48630b7361dd44ee870917b12c3d19b9d7bdea738aaca16bb04d4cab83b772d2; output-bytes=8
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/tom/Development/axisj/beautiful-grid-plugins; path=35795f1e44af/34 entries; EXPECT=matched; output-sha256=48630b7361dd44ee870917b12c3d19b9d7bdea738aaca16bb04d4cab83b772d2; output-bytes=8
 
-- [x] G1: all workspace source typechecks and automated editor tests pass
-  CHECK: pnpm test && pnpm typecheck && node -e "console.log('editor tests and typecheck passed')"
-  EXPECT: editor tests and typecheck passed
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/tom/Development/axisj/beautiful-grid-plugins; path=67da5b2427f3/34 entries; EXPECT=matched; output-sha256=4765c6545fecf38d8ad29cb051337a50bf0150d01124c3645c1c6bc40de07e03; output-bytes=4280
+- [x] G1: MUI and Mantine expose exactly the four requested editor factory families and their factory tests pass
+  CHECK: pnpm test && node -e "console.log('integration factory tests passed')"
+  EXPECT: integration factory tests passed
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/tom/Development/axisj/beautiful-grid-plugins; path=35795f1e44af/34 entries; EXPECT=matched; output-sha256=02ab7ce7ecb4659abba7a9422f7fa51120712f81207a7abf5ee6b6ea6582f7b3; output-bytes=4595
 
-- [x] G2: all npm packages build and their declared ESM, CJS, type, CSS, and license artifacts are publishable
-  CHECK: pnpm build && pnpm verify:packages && node -e "console.log('package artifacts verified')"
-  EXPECT: package artifacts verified
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/tom/Development/axisj/beautiful-grid-plugins; path=67da5b2427f3/34 entries; EXPECT=matched; output-sha256=42db06510a081e1aa1d8f4e25b96acfb4ee3340c6d03fa3b695a28e2414c8334; output-bytes=3379
+- [x] G2: all integration source and Shadcn registry source typecheck
+  CHECK: pnpm typecheck && node -e "console.log('integration typecheck passed')"
+  EXPECT: integration typecheck passed
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/tom/Development/axisj/beautiful-grid-plugins; path=35795f1e44af/34 entries; EXPECT=matched; output-sha256=202e3502e0f241db715a657256cf09ad1f095be99ddf7e05819e758857a983df; output-bytes=590
 
-- [x] G3: the Shadcn registry contains installable editor source and passes registry validation
-  CHECK: pnpm registry:validate && pnpm verify:registry && node -e "console.log('shadcn registry verified')"
-  EXPECT: shadcn registry verified
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/tom/Development/axisj/beautiful-grid-plugins; path=67da5b2427f3/34 entries; EXPECT=matched; output-sha256=716781b5f55add1de6d29c1f286bfcab274cc31f0ed390b3073238c005fe3c95; output-bytes=460
+- [x] G3: MUI and Mantine are publishable and their artifacts contain runtime, type, style, documentation, and license files without excluded APIs
+  CHECK: pnpm build && pnpm verify:packages && node -e "console.log('integration packages verified')"
+  EXPECT: integration packages verified
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/tom/Development/axisj/beautiful-grid-plugins; path=35795f1e44af/34 entries; EXPECT=matched; output-sha256=3aed45e511d6f0fae643f4392d27f5ca0e56e5f7f5df494c043e68d13c047cee; output-bytes=3816
 
-- [x] G4: repository changes contain no whitespace errors and the full project check succeeds
-  CHECK: git diff --check && pnpm check && node -e "console.log('repository verification passed')"
+- [x] G4: the complete repository verification succeeds with current generated Registry artifacts
+  CHECK: pnpm check && node -e "console.log('repository verification passed')"
   EXPECT: repository verification passed
-  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/tom/Development/axisj/beautiful-grid-plugins; path=67da5b2427f3/34 entries; EXPECT=matched; output-sha256=d4253e5ae4bf41d8b34acfc1e632f22220978251551d9a0098fd1d936f331fbe; output-bytes=5071
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/tom/Development/axisj/beautiful-grid-plugins; path=35795f1e44af/34 entries; EXPECT=matched; output-sha256=b52f5cb048162c29852735326d40ac45794db124425c9b8426f02c71bb2a68d4; output-bytes=5946
+
+- [x] G5: repository changes contain no whitespace errors
+  CHECK: git diff --check && node -e "console.log('diff verification passed')"
+  EXPECT: diff verification passed
+  EVIDENCE: exit=0; shell=/bin/sh; cwd=/Users/tom/Development/axisj/beautiful-grid-plugins; path=35795f1e44af/34 entries; EXPECT=matched; output-sha256=1c7f5d6a476f95628d2d42ded372e5eff17f65774d1885ca6eaa809e3ea4ecea; output-bytes=25

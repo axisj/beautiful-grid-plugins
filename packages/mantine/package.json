@@ -1,7 +1,6 @@
 {
   "name": "@beautifuljs/grid-mantine",
   "version": "0.1.0",
-  "private": true,
   "description": "Mantine editor integrations for BeautifulGrid.",
   "license": "Apache-2.0",
   "type": "module",
@@ -18,7 +17,8 @@
         "types": "./dist/index.d.cts",
         "default": "./dist/index.cjs"
       }
-    }
+    },
+    "./style.css": "./dist/index.css"
   },
   "files": [
     "dist",
@@ -26,7 +26,9 @@
     "NOTICE",
     "THIRD_PARTY_NOTICES.md"
   ],
-  "sideEffects": false,
+  "sideEffects": [
+    "**/*.css"
+  ],
   "repository": {
     "type": "git",
     "url": "git+https://github.com/axisj/beautiful-grid-plugins.git",
@@ -55,8 +57,8 @@
     "prepack": "pnpm build"
   },
   "peerDependencies": {
-    "@mantine/core": ">=8 <10",
-    "@mantine/dates": ">=8 <10",
+    "@mantine/core": ">=9 <10",
+    "@mantine/dates": ">=9 <10",
     "beautiful-grid": ">=1 <2",
     "react": "^19.2.0",
     "react-dom": "^19.2.0"

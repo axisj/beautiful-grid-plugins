@@ -8,9 +8,8 @@ const packages = ['antd', 'mui', 'mantine'];
 for (const directory of packages) {
   const cwd = resolve('packages', directory);
   const manifest = JSON.parse(readFileSync(resolve(cwd, 'package.json'), 'utf8'));
-  if (directory !== 'antd') {
-    assert.equal(manifest.private, true, `${directory} must remain private until its public API is implemented`);
-  }
+  assert.notEqual(manifest.private, true, `${directory} must be publishable`);
+  assert.equal(manifest.exports['./style.css'], './dist/index.css', `${directory} must export its stylesheet`);
   assert.equal(manifest.peerDependencies.react, '^19.2.0', `${directory} React peer must match BeautifulGrid`);
   assert.equal(manifest.peerDependencies['react-dom'], '^19.2.0', `${directory} React DOM peer must match BeautifulGrid`);
   assert.ok(existsSync(resolve(cwd, 'LICENSE')), `${directory} must include LICENSE`);
@@ -36,7 +35,18 @@ for (const directory of packages) {
   ]) {
     assert.ok(files.has(required), `${manifest.name} tarball is missing ${required}`);
   }
-  if (directory === 'antd') assert.ok(files.has('dist/index.css'), `${manifest.name} tarball is missing its stylesheet`);
+  assert.ok(files.has('dist/index.css'), `${manifest.name} tarball is missing its stylesheet`);
+
+  if (directory === 'mui' || directory === 'mantine') {
+    const declarations = readFileSync(resolve(cwd, 'dist/index.d.ts'), 'utf8');
+    const prefix = directory === 'mui' ? 'Mui' : 'Mantine';
+    for (const editor of ['Select', 'DatePicker', 'ColorPicker', 'TimePicker']) {
+      assert.match(declarations, new RegExp(`create${prefix}${editor}EditorPlugin`), `${manifest.name} is missing ${editor}`);
+    }
+    for (const excluded of ['Cascader', 'TreeSelect']) {
+      assert.doesNotMatch(declarations, new RegExp(`create${prefix}${excluded}EditorPlugin`), `${manifest.name} must exclude ${excluded}`);
+    }
+  }
 }
 
 console.log('package verification passed');

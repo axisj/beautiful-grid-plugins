@@ -8,7 +8,31 @@ Mantine editor integrations for [BeautifulGrid](https://bgrid.axisj.com).
 pnpm add @beautifuljs/grid-mantine @mantine/core @mantine/dates beautiful-grid react react-dom
 ```
 
-The initial package structure is ready for plugin implementations. Public APIs will be documented here as they are added.
+Import the plugin stylesheet once in your application entry point:
+
+```tsx
+import '@beautifuljs/grid-mantine/style.css';
+```
+
+The package provides Select, DatePicker, ColorPicker, and TimePicker editor
+factories. Cascader and TreeSelect are intentionally outside this integration's
+scope.
+
+```tsx
+import { createMantineSelectEditorPlugin } from '@beautifuljs/grid-mantine';
+
+const statusEditor = createMantineSelectEditorPlugin<Order, Order['status']>({
+  id: 'order-status',
+  ariaLabel: 'Select order status',
+  options: [
+    { value: 'ready', label: 'Ready' },
+    { value: 'shipped', label: 'Shipped' },
+  ],
+});
+```
+
+Assign the returned config to an editable BeautifulGrid column's `editor`.
+Popup content is rendered into BeautifulGrid's floating portal root.
 
 ## License
 

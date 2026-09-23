@@ -1,0 +1,99 @@
+.bgrid-mui-select-editor,
+.bgrid-mui-date-editor,
+.bgrid-mui-time-editor,
+.bgrid-mui-color-editor {
+  box-sizing: border-box;
+  color: inherit;
+  font: inherit;
+}
+
+.bgrid-mui-select-editor,
+.bgrid-mui-date-editor,
+.bgrid-mui-time-editor {
+  width: 100%;
+  height: 100%;
+}
+
+.bgrid-mui-select-editor::before,
+.bgrid-mui-select-editor::after,
+.bgrid-mui-date-editor .MuiInput-root::before,
+.bgrid-mui-date-editor .MuiInput-root::after,
+.bgrid-mui-time-editor .MuiInput-root::before,
+.bgrid-mui-time-editor .MuiInput-root::after {
+  display: none;
+}
+
+.bgrid-mui-select-editor .MuiSelect-select,
+.bgrid-mui-date-editor .MuiPickersInputBase-root,
+.bgrid-mui-time-editor .MuiPickersInputBase-root {
+  min-height: 0;
+  padding: 0 6.5px;
+  color: inherit;
+  font: inherit;
+}
+
+.bgrid-mui-color-editor {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0 9.5px 0 6.5px;
+  border: 0;
+  background: transparent;
+  text-align: left;
+  cursor: pointer;
+}
+
+.bgrid-mui-color-value {
+  min-width: 0;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.bgrid-mui-color-swatch {
+  width: 14px;
+  height: 14px;
+  margin-left: auto;
+  border: 1px solid rgb(0 0 0 / 18%);
+  border-radius: 3px;
+  flex: 0 0 14px;
+}
+
+.bgrid-mui-editor-popup,
+.bgrid-mui-editor-popup .MuiMenuItem-root,
+.bgrid-mui-editor-popup .MuiPickersLayout-root {
+  font-family: var(--bgrid-font-family, inherit);
+  font-size: var(--bgrid-font-size, 13px);
+}
+
+.bgrid-mui-color-popup {
+  display: grid;
+  width: 240px;
+  gap: 10px;
+  padding: 12px;
+}
+
+.bgrid-mui-color-popup > input[type='color'] {
+  width: 100%;
+  height: 80px;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  cursor: pointer;
+}
+
+.bgrid-mui-color-presets {
+  display: grid;
+  grid-template-columns: repeat(8, 1fr);
+  gap: 5px;
+}
+
+.bgrid-mui-color-presets button {
+  aspect-ratio: 1;
+  border: 1px solid rgb(0 0 0 / 18%);
+  border-radius: 3px;
+  cursor: pointer;
+}
