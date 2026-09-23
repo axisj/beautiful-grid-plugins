@@ -14,7 +14,9 @@ for (const directory of packages) {
   assert.ok(existsSync(resolve(cwd, 'NOTICE')), `${directory} must include NOTICE`);
   assert.ok(existsSync(resolve(cwd, 'THIRD_PARTY_NOTICES.md')), `${directory} must include third-party notices`);
 
-  const result = spawnSync('npm', ['pack', '--dry-run', '--json'], { cwd, encoding: 'utf8' });
+  // The workspace build has already produced dist/. Avoid running each package's
+  // prepack script here because its stdout is mixed into npm's JSON output on CI.
+  const result = spawnSync('npm', ['pack', '--dry-run', '--json', '--ignore-scripts'], { cwd, encoding: 'utf8' });
   assert.equal(result.status, 0, result.stderr || `${directory} npm pack failed`);
   const [pack] = JSON.parse(result.stdout);
   const files = new Set(pack.files.map(file => file.path));
