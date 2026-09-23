@@ -4,11 +4,11 @@ Official plugins and integrations for [BeautifulGrid](https://bgrid.axisj.com).
 
 ## Packages
 
-| Package | Description |
-| --- | --- |
-| [`@beautifuljs/grid-antd`](./packages/antd) | Ant Design editor integrations for BeautifulGrid |
-| [`@beautifuljs/grid-mui`](./packages/mui) | Material UI editor integrations for BeautifulGrid |
-| [`@beautifuljs/grid-mantine`](./packages/mantine) | Mantine editor integrations for BeautifulGrid |
+| Package | Status | Description |
+| --- | --- | --- |
+| [`@beautifuljs/grid-antd`](./packages/antd) | Published | Ant Design editor integrations for BeautifulGrid |
+| [`@beautifuljs/grid-mui`](./packages/mui) | Planned/private | Material UI editor integrations for BeautifulGrid |
+| [`@beautifuljs/grid-mantine`](./packages/mantine) | Planned/private | Mantine editor integrations for BeautifulGrid |
 
 Shadcn integrations are distributed as source code through the
 [`registry/shadcn`](./registry/shadcn) registry instead of npm.

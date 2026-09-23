@@ -8,6 +8,9 @@ const packages = ['antd', 'mui', 'mantine'];
 for (const directory of packages) {
   const cwd = resolve('packages', directory);
   const manifest = JSON.parse(readFileSync(resolve(cwd, 'package.json'), 'utf8'));
+  if (directory !== 'antd') {
+    assert.equal(manifest.private, true, `${directory} must remain private until its public API is implemented`);
+  }
   assert.equal(manifest.peerDependencies.react, '^19.2.0', `${directory} React peer must match BeautifulGrid`);
   assert.equal(manifest.peerDependencies['react-dom'], '^19.2.0', `${directory} React DOM peer must match BeautifulGrid`);
   assert.ok(existsSync(resolve(cwd, 'LICENSE')), `${directory} must include LICENSE`);
