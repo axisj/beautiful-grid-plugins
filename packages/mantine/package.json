@@ -1,6 +1,6 @@
 {
   "name": "@beautifuljs/grid-mantine",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "Mantine editor integrations for BeautifulGrid.",
   "license": "Apache-2.0",
   "type": "module",
