@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { readFileSync } from 'node:fs';
 import test from 'node:test';
 import { createRequire } from 'node:module';
 
@@ -55,3 +56,9 @@ for (const integration of integrations) {
     }
   });
 }
+
+test('Mantine ColorInput attaches the popup class through its top-level styles API', () => {
+  const source = readFileSync('packages/mantine/src/createMantineColorPickerEditorPlugin.tsx', 'utf8');
+  assert.match(source, /classNames=\{\{ dropdown: 'bgrid-mantine-editor-popup' \}\}/);
+  assert.doesNotMatch(source, /popoverProps=\{\{\s*classNames:/);
+});

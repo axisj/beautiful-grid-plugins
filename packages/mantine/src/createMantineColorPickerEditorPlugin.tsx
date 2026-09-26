@@ -32,14 +32,15 @@ export function createMantineColorPickerEditorPlugin<T>(
         aria-label={options.ariaLabel}
         autoFocus
         className='bgrid-mantine-color-editor'
+        classNames={{ dropdown: 'bgrid-mantine-editor-popup' }}
         closeOnColorSwatchClick
         defaultValue={initialColor}
         format={options.disabledAlpha === false ? 'hexa' : 'hex'}
         popoverProps={{
-          classNames: { dropdown: 'bgrid-mantine-editor-popup' },
           opened: lifecycle.open,
           portalProps: { target: getPortalContainer() },
           withinPortal: true,
+          offset: 0,
           onChange: lifecycle.onOpenChange,
         }}
         {...(options.colors ? { swatches: options.colors } : {})}

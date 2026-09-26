@@ -27,6 +27,7 @@ export function createMantineDatePickerEditorPlugin<T>(
         opened={lifecycle.open}
         portalProps={{ target: getPortalContainer() }}
         position='bottom-start'
+        offset={0}
         withinPortal
         onChange={lifecycle.onOpenChange}
       >

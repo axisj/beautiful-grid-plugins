@@ -33,6 +33,7 @@ export function createMantineTimePickerEditorPlugin<T>(
         opened={lifecycle.open}
         portalProps={{ target: getPortalContainer() }}
         position='bottom-start'
+        offset={0}
         withinPortal
         onChange={lifecycle.onOpenChange}
       >
@@ -56,6 +57,7 @@ export function createMantineTimePickerEditorPlugin<T>(
                 classNames: { dropdown: 'bgrid-mantine-editor-popup' },
                 portalProps: { target: getPortalContainer() },
                 withinPortal: true,
+                offset: 0,
               }}
               value={time}
               withDropdown

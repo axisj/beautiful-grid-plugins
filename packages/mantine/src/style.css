@@ -3,40 +3,318 @@
 .bgrid-mantine-color-editor,
 .bgrid-mantine-time-editor {
   box-sizing: border-box;
-  width: 100%;
-  height: 100%;
-  color: inherit;
-  font: inherit;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  color: inherit !important;
+  font: inherit !important;
 }
 
-.bgrid-mantine-select-editor input,
+/* Mantine Select Editor */
+.bgrid-mantine-select-editor {
+  display: flex !important;
+  align-items: center !important;
+}
+
+.bgrid-mantine-select-editor .mantine-Input-wrapper {
+  display: flex !important;
+  align-items: center !important;
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+}
+
+.bgrid-mantine-select-editor input {
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  padding: 0 29.5px 0 6.5px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: inherit !important;
+  font-family: inherit !important;
+  font-size: var(--bgrid-font-size, 13px) !important;
+  line-height: var(--bgrid-item-line-height, 22px) !important;
+  text-align: left !important;
+  cursor: pointer !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+}
+
+.bgrid-mantine-select-editor .mantine-Select-section[data-position='right'],
+.bgrid-mantine-select-editor .mantine-Input-section[data-position='right'] {
+  position: absolute !important;
+  right: 6.5px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 20px !important;
+  height: 20px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  color: var(--bgrid-body-color, #444444) !important;
+  pointer-events: none !important;
+}
+
+.bgrid-mantine-select-editor .mantine-Select-section svg,
+.bgrid-mantine-select-editor .mantine-Input-section svg {
+  display: block !important;
+  width: 14px !important;
+  height: 14px !important;
+}
+
+/* Mantine ColorPicker Editor - place swatch on the right to align with inactive cell */
+.bgrid-mantine-color-editor .mantine-Input-wrapper {
+  display: flex !important;
+  align-items: center !important;
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+}
+
+.bgrid-mantine-color-editor .mantine-ColorInput-section[data-position='left'],
+.bgrid-mantine-color-editor .mantine-Input-section[data-position='left'] {
+  position: absolute !important;
+  left: auto !important;
+  right: 6.5px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 20px !important;
+  height: 20px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  border: none !important;
+  background: transparent !important;
+  box-shadow: none !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  pointer-events: none !important;
+  z-index: 2 !important;
+}
+
+.bgrid-mantine-color-editor .mantine-ColorSwatch-root {
+  --cs-size: 14px !important;
+  --cs-radius: 3px !important;
+  width: 14px !important;
+  height: 14px !important;
+  min-width: 14px !important;
+  min-height: 14px !important;
+  border-radius: 3px !important;
+  border: 1px solid rgba(0, 0, 0, 0.18) !important;
+  box-shadow: none !important;
+  box-sizing: border-box !important;
+  overflow: hidden !important;
+  background: transparent !important;
+}
+
+.bgrid-mantine-color-editor .mantine-ColorSwatch-root * {
+  border-radius: inherit !important;
+  box-shadow: none !important;
+}
+
+[data-bgrid-theme='dark'] .bgrid-mantine-color-editor .mantine-ColorSwatch-root,
+:root[data-theme='dark'] .bgrid-mantine-color-editor .mantine-ColorSwatch-root {
+  border-color: rgba(255, 255, 255, 0.22) !important;
+}
+
 .bgrid-mantine-color-editor input {
-  height: 100%;
-  min-height: 0;
-  padding: 0 6.5px;
-  color: inherit;
-  font: inherit;
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  padding: 0 29.5px 0 6.5px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: inherit !important;
+  font-family: inherit !important;
+  font-size: var(--bgrid-font-size, 13px) !important;
+  line-height: var(--bgrid-item-line-height, 22px) !important;
+  text-align: left !important;
+  outline: none !important;
+  box-sizing: border-box !important;
 }
 
+/* Mantine DatePicker & TimePicker Target Buttons */
 .bgrid-mantine-date-editor,
 .bgrid-mantine-time-editor {
-  margin: 0;
-  padding: 0 6.5px;
-  border: 0;
-  background: transparent;
-  text-align: left;
-  cursor: pointer;
+  display: flex !important;
+  align-items: center !important;
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 29.5px 0 6.5px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: inherit !important;
+  font-family: inherit !important;
+  font-size: var(--bgrid-font-size, 13px) !important;
+  line-height: var(--bgrid-item-line-height, 22px) !important;
+  text-align: left !important;
+  cursor: pointer !important;
+  outline: none !important;
+  box-sizing: border-box !important;
 }
 
-.bgrid-mantine-editor-popup,
-.bgrid-mantine-editor-popup .mantine-Combobox-option,
-.bgrid-mantine-editor-popup .mantine-DatePickerInput-calendarHeader,
-.bgrid-mantine-editor-popup .mantine-TimePicker-control {
-  font-family: var(--bgrid-font-family, inherit);
-  font-size: var(--bgrid-font-size, 13px);
+.bgrid-mantine-date-editor::after,
+.bgrid-mantine-time-editor::after {
+  content: '' !important;
+  position: absolute !important;
+  right: 9.5px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  width: 14px !important;
+  height: 14px !important;
+  display: block !important;
+  pointer-events: none !important;
+  background-color: var(--bgrid-body-color, #444444) !important;
+  mask-size: contain !important;
+  mask-repeat: no-repeat !important;
+  mask-position: center !important;
+  -webkit-mask-size: contain !important;
+  -webkit-mask-repeat: no-repeat !important;
+  -webkit-mask-position: center !important;
 }
 
+.bgrid-mantine-date-editor::after {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2.5' y='3.5' width='11' height='10' rx='1.5'/%3E%3Cpath d='M5 2.5v2M11 2.5v2M2.5 6.5h11'/%3E%3C/svg%3E") !important;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Crect x='2.5' y='3.5' width='11' height='10' rx='1.5'/%3E%3Cpath d='M5 2.5v2M11 2.5v2M2.5 6.5h11'/%3E%3C/svg%3E") !important;
+}
+
+.bgrid-mantine-time-editor::after {
+  mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='8' cy='8' r='5.5'/%3E%3Cpath d='M8 4.75V8l2.25 1.5'/%3E%3C/svg%3E") !important;
+  -webkit-mask-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16' fill='none' stroke='currentColor' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'%3E%3Ccircle cx='8' cy='8' r='5.5'/%3E%3Cpath d='M8 4.75V8l2.25 1.5'/%3E%3C/svg%3E") !important;
+}
+
+[data-bgrid-theme='dark'] .bgrid-mantine-date-editor::after,
+[data-bgrid-theme='dark'] .bgrid-mantine-time-editor::after,
+:root[data-theme='dark'] .bgrid-mantine-date-editor::after,
+:root[data-theme='dark'] .bgrid-mantine-time-editor::after {
+  background-color: var(--bgrid-body-color, #c9d1d9) !important;
+}
+
+/* Mantine Popover & Dropdowns - seamlessly attached to cell bottom border */
+.bgrid-mantine-editor-popup {
+  box-sizing: border-box !important;
+  font-family: var(--bgrid-font-family, inherit) !important;
+  font-size: var(--bgrid-font-size, 13px) !important;
+  border-radius: 8px !important;
+  border: 1px solid var(--bgrid-border-color-light, rgba(0, 0, 0, 0.12)) !important;
+  background-color: var(--bgrid-body-bg, #ffffff) !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.12), 0 8px 10px -6px rgba(0, 0, 0, 0.08) !important;
+  margin-top: -1px !important;
+}
+
+.bgrid-mantine-editor-popup[data-position^='top'] {
+  margin-top: 1px !important;
+}
+
+/* Mantine Select Dropdown */
+.mantine-Combobox-dropdown.bgrid-mantine-editor-popup {
+  padding: 4px !important;
+}
+
+.bgrid-mantine-editor-popup .mantine-Combobox-option {
+  display: flex !important;
+  align-items: center !important;
+  padding: 6px 10px !important;
+  border-radius: 4px !important;
+  font-size: var(--bgrid-font-size, 13px) !important;
+  line-height: 20px !important;
+  color: inherit !important;
+  cursor: pointer !important;
+  transition: background-color 0.15s ease !important;
+}
+
+.bgrid-mantine-editor-popup .mantine-Combobox-option:hover,
+.bgrid-mantine-editor-popup .mantine-Combobox-option[data-hovered] {
+  background-color: var(--bgrid-body-hover-bg, #f1f5f9) !important;
+}
+
+.bgrid-mantine-editor-popup .mantine-Combobox-option[data-checked],
+.bgrid-mantine-editor-popup .mantine-Combobox-option[aria-selected='true'] {
+  background-color: var(--bgrid-primary-color, #2563eb) !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
+
+.bgrid-mantine-editor-popup .mantine-Combobox-option[data-checked] svg,
+.bgrid-mantine-editor-popup .mantine-Combobox-option[aria-selected='true'] svg {
+  color: #ffffff !important;
+}
+
+/* Mantine ColorPicker Dropdown */
+.mantine-ColorInput-dropdown.bgrid-mantine-editor-popup {
+  padding: 12px !important;
+}
+
+/* Mantine DatePicker Dropdown */
+.mantine-Popover-dropdown.bgrid-mantine-editor-popup {
+  padding: 12px !important;
+}
+
+.bgrid-mantine-editor-popup .mantine-DatePicker-day[data-selected] {
+  background-color: var(--bgrid-primary-color, #2563eb) !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
+
+/* Mantine TimePicker Popup */
 .bgrid-mantine-time-popup {
-  display: grid;
-  gap: 10px;
+  display: grid !important;
+  gap: 12px !important;
+  padding: 4px !important;
+}
+
+.bgrid-mantine-time-popup button {
+  background-color: var(--bgrid-primary-color, #2563eb) !important;
+  color: #ffffff !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  height: 30px !important;
+  border-radius: 6px !important;
+}
+
+.bgrid-mantine-time-popup button:hover {
+  filter: brightness(0.9) !important;
+}
+
+/* Dark Theme Overrides */
+[data-bgrid-theme='dark'] .bgrid-mantine-editor-popup,
+:root[data-theme='dark'] .bgrid-mantine-editor-popup {
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  background-color: var(--bgrid-body-bg, #151f33) !important;
+  color: #f2f6fc !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-bgrid-theme='dark'] .bgrid-mantine-editor-popup .mantine-Combobox-option,
+:root[data-theme='dark'] .bgrid-mantine-editor-popup .mantine-Combobox-option {
+  color: #f2f6fc !important;
+}
+
+[data-bgrid-theme='dark'] .bgrid-mantine-editor-popup .mantine-Combobox-option:hover,
+[data-bgrid-theme='dark'] .bgrid-mantine-editor-popup .mantine-Combobox-option[data-hovered],
+:root[data-theme='dark'] .bgrid-mantine-editor-popup .mantine-Combobox-option:hover,
+:root[data-theme='dark'] .bgrid-mantine-editor-popup .mantine-Combobox-option[data-hovered] {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+}
+
+[data-bgrid-theme='dark'] .bgrid-mantine-editor-popup .mantine-Combobox-option[data-checked],
+[data-bgrid-theme='dark'] .bgrid-mantine-editor-popup .mantine-Combobox-option[aria-selected='true'],
+:root[data-theme='dark'] .bgrid-mantine-editor-popup .mantine-Combobox-option[data-checked],
+:root[data-theme='dark'] .bgrid-mantine-editor-popup .mantine-Combobox-option[aria-selected='true'] {
+  background-color: var(--bgrid-primary-color, #2563eb) !important;
+  color: #ffffff !important;
 }

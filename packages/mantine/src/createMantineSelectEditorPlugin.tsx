@@ -35,6 +35,8 @@ export function createMantineSelectEditorPlugin<T, Value extends string | number
           classNames: { dropdown: 'bgrid-mantine-editor-popup' },
           portalProps: { target: getPortalContainer() },
           withinPortal: true,
+          offset: 0,
+          position: 'bottom-start',
         }}
         data={options.options}
         defaultValue={value as Value}

@@ -1,99 +1,832 @@
-.bgrid-mui-select-editor,
-.bgrid-mui-date-editor,
-.bgrid-mui-time-editor,
-.bgrid-mui-color-editor {
-  box-sizing: border-box;
-  color: inherit;
-  font: inherit;
-}
+/* MUI Editor Plugins Stylesheet */
 
 .bgrid-mui-select-editor,
 .bgrid-mui-date-editor,
+.bgrid-mui-color-editor,
 .bgrid-mui-time-editor {
-  width: 100%;
-  height: 100%;
+  box-sizing: border-box !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  color: inherit !important;
+  font: inherit !important;
+}
+
+/* ==========================================================================
+   In-Cell Editors
+   ========================================================================== */
+
+/* MUI Select Editor */
+.bgrid-mui-select-editor {
+  display: flex !important;
+  align-items: center !important;
+  position: relative !important;
+  width: 100% !important;
+  height: 100% !important;
+  box-sizing: border-box !important;
 }
 
 .bgrid-mui-select-editor::before,
-.bgrid-mui-select-editor::after,
+.bgrid-mui-select-editor::after {
+  display: none !important;
+}
+
+.bgrid-mui-select-editor .MuiSelect-select {
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  padding: 0 29.5px 0 6.5px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: inherit !important;
+  font-family: inherit !important;
+  font-size: var(--bgrid-font-size, 13px) !important;
+  line-height: var(--bgrid-item-line-height, 22px) !important;
+  text-align: left !important;
+  cursor: pointer !important;
+  outline: none !important;
+  box-sizing: border-box !important;
+}
+
+.bgrid-mui-select-editor .MuiSelect-icon {
+  position: absolute !important;
+  right: 6.5px !important;
+  top: 50% !important;
+  transform: translateY(-50%) !important;
+  transform-origin: center center !important;
+  width: 20px !important;
+  height: 20px !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  font-size: 18px !important;
+  color: var(--bgrid-body-color, #444444) !important;
+  pointer-events: none !important;
+  transition: transform 0.2s ease, color 0.15s ease !important;
+}
+
+.bgrid-mui-select-editor .MuiSelect-icon.MuiSelect-iconOpen {
+  transform: translateY(-50%) rotate(180deg) !important;
+}
+
+/* MUI DatePicker & TimePicker in-cell */
+.bgrid-mui-date-editor,
+.bgrid-mui-time-editor {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+  box-sizing: border-box !important;
+}
+
+.bgrid-mui-date-editor::before,
+.bgrid-mui-date-editor::after,
+.bgrid-mui-time-editor::before,
+.bgrid-mui-time-editor::after,
 .bgrid-mui-date-editor .MuiInput-root::before,
 .bgrid-mui-date-editor .MuiInput-root::after,
 .bgrid-mui-time-editor .MuiInput-root::before,
 .bgrid-mui-time-editor .MuiInput-root::after {
-  display: none;
+  display: none !important;
 }
 
-.bgrid-mui-select-editor .MuiSelect-select,
 .bgrid-mui-date-editor .MuiPickersInputBase-root,
-.bgrid-mui-time-editor .MuiPickersInputBase-root {
-  min-height: 0;
-  padding: 0 6.5px;
-  color: inherit;
-  font: inherit;
+.bgrid-mui-time-editor .MuiPickersInputBase-root,
+.bgrid-mui-date-editor .MuiInput-root,
+.bgrid-mui-time-editor .MuiInput-root,
+.bgrid-mui-date-editor .MuiInputBase-root,
+.bgrid-mui-time-editor .MuiInputBase-root {
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  margin: 0 !important;
+  padding: 0 6.5px !important;
+  border: 0 !important;
+  background: transparent !important;
+  color: inherit !important;
+  box-sizing: border-box !important;
 }
 
+.bgrid-mui-date-editor .MuiPickersSectionList-root,
+.bgrid-mui-time-editor .MuiPickersSectionList-root {
+  display: flex !important;
+  align-items: center !important;
+  flex: 1 1 auto !important;
+  width: auto !important;
+  height: 100% !important;
+  min-width: 0 !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  outline: none !important;
+}
+
+.bgrid-mui-date-editor .MuiPickersSectionList-section,
+.bgrid-mui-time-editor .MuiPickersSectionList-section {
+  display: inline-flex !important;
+  align-items: center !important;
+  height: 100% !important;
+  font-family: inherit !important;
+  font-size: var(--bgrid-font-size, 13px) !important;
+  line-height: var(--bgrid-item-line-height, 22px) !important;
+  color: inherit !important;
+}
+
+.bgrid-mui-date-editor .MuiPickersInputBase-sectionContent,
+.bgrid-mui-time-editor .MuiPickersInputBase-sectionContent,
+.bgrid-mui-date-editor .MuiPickersInputBase-separator,
+.bgrid-mui-time-editor .MuiPickersInputBase-separator {
+  font-family: inherit !important;
+  font-size: var(--bgrid-font-size, 13px) !important;
+  line-height: var(--bgrid-item-line-height, 22px) !important;
+  color: inherit !important;
+  outline: none !important;
+}
+
+.bgrid-mui-date-editor .MuiInputBase-input,
+.bgrid-mui-time-editor .MuiInputBase-input {
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  min-height: 0 !important;
+  padding: 0 !important;
+  border: 0 !important;
+  background: transparent !important;
+  color: inherit !important;
+  font-family: inherit !important;
+  font-size: var(--bgrid-font-size, 13px) !important;
+  line-height: var(--bgrid-item-line-height, 22px) !important;
+  box-sizing: border-box !important;
+}
+
+.bgrid-mui-date-editor .MuiInputAdornment-root,
+.bgrid-mui-time-editor .MuiInputAdornment-root {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  height: 100% !important;
+  max-height: 100% !important;
+  margin: 0 !important;
+  padding: 0 !important;
+}
+
+.bgrid-mui-date-editor .MuiIconButton-root,
+.bgrid-mui-time-editor .MuiIconButton-root {
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: 20px !important;
+  height: 20px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border-radius: 3px !important;
+  color: var(--bgrid-body-color, #444444) !important;
+  transition: background-color 0.15s ease, color 0.15s ease !important;
+}
+
+.bgrid-mui-date-editor .MuiIconButton-root:hover,
+.bgrid-mui-time-editor .MuiIconButton-root:hover {
+  background-color: var(--bgrid-body-hover-bg, #f1f5f9) !important;
+  color: var(--bgrid-primary-color, #2563eb) !important;
+}
+
+.bgrid-mui-date-editor .MuiIconButton-root svg,
+.bgrid-mui-time-editor .MuiIconButton-root svg {
+  width: 14px !important;
+  height: 14px !important;
+  font-size: 14px !important;
+  flex: none !important;
+}
+
+/* MUI ColorPicker in-cell */
 .bgrid-mui-color-editor {
-  display: flex;
-  align-items: center;
-  gap: 6px;
-  width: 100%;
-  height: 100%;
-  margin: 0;
-  padding: 0 9.5px 0 6.5px;
-  border: 0;
-  background: transparent;
-  text-align: left;
-  cursor: pointer;
+  display: flex !important;
+  align-items: center !important;
+  width: 100% !important;
+  height: 100% !important;
+  margin: 0 !important;
+  padding: 0 9.5px 0 6.5px !important;
+  border: 0 !important;
+  border-radius: 0 !important;
+  background: transparent !important;
+  color: inherit !important;
+  font-family: inherit !important;
+  font-size: var(--bgrid-font-size, 13px) !important;
+  line-height: var(--bgrid-item-line-height, 22px) !important;
+  text-align: left !important;
+  cursor: pointer !important;
+  outline: none !important;
+  box-sizing: border-box !important;
 }
 
 .bgrid-mui-color-value {
-  min-width: 0;
-  overflow: hidden;
-  text-overflow: ellipsis;
-  white-space: nowrap;
+  flex: 1 1 auto !important;
+  min-width: 0 !important;
+  overflow: hidden !important;
+  text-overflow: ellipsis !important;
+  white-space: nowrap !important;
+  font-family: inherit !important;
+  font-size: var(--bgrid-font-size, 13px) !important;
+  line-height: var(--bgrid-item-line-height, 22px) !important;
 }
 
 .bgrid-mui-color-swatch {
-  width: 14px;
-  height: 14px;
-  margin-left: auto;
-  border: 1px solid rgb(0 0 0 / 18%);
-  border-radius: 3px;
-  flex: 0 0 14px;
+  width: 14px !important;
+  height: 14px !important;
+  min-width: 14px !important;
+  min-height: 14px !important;
+  margin: 0 !important;
+  margin-left: auto !important;
+  border: 1px solid rgba(0, 0, 0, 0.18) !important;
+  border-radius: 3px !important;
+  box-sizing: border-box !important;
+  flex: 0 0 14px !important;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease !important;
 }
 
-.bgrid-mui-editor-popup,
-.bgrid-mui-editor-popup .MuiMenuItem-root,
-.bgrid-mui-editor-popup .MuiPickersLayout-root {
-  font-family: var(--bgrid-font-family, inherit);
-  font-size: var(--bgrid-font-size, 13px);
+.bgrid-mui-color-editor:hover .bgrid-mui-color-swatch {
+  border-color: rgba(0, 0, 0, 0.4) !important;
+  box-shadow: 0 0 0 1px rgba(0, 0, 0, 0.15) !important;
 }
+
+/* ==========================================================================
+   Popup Wrappers & Paper Surfaces (attached seamlessly to cell)
+   ========================================================================== */
+
+/* Outer popper / modal overlay reset */
+.bgrid-mui-editor-popup:not(.MuiPaper-root) {
+  background: transparent !important;
+  border: 0 !important;
+  box-shadow: none !important;
+  border-radius: 0 !important;
+}
+
+.bgrid-mui-editor-popup .MuiBackdrop-root {
+  background-color: transparent !important;
+}
+
+/* Floating Paper Card */
+.bgrid-mui-editor-popup.MuiPaper-root,
+.bgrid-mui-editor-popup .MuiPaper-root {
+  box-sizing: border-box !important;
+  font-family: var(--bgrid-font-family, inherit) !important;
+  font-size: var(--bgrid-font-size, 13px) !important;
+  border-radius: 8px !important;
+  border: 1px solid var(--bgrid-border-color-light, rgba(0, 0, 0, 0.12)) !important;
+  background-color: var(--bgrid-body-bg, #ffffff) !important;
+  background-image: none !important;
+  color: var(--bgrid-body-color, #0f172a) !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.12), 0 8px 10px -6px rgba(0, 0, 0, 0.08) !important;
+  overflow: hidden !important;
+  margin-top: -1px !important;
+}
+
+/* ==========================================================================
+   MUI Select Dropdown
+   ========================================================================== */
+
+.bgrid-mui-editor-popup .MuiList-root {
+  padding: 4px !important;
+}
+
+.bgrid-mui-editor-popup .MuiMenuItem-root {
+  display: flex !important;
+  align-items: center !important;
+  min-height: 32px !important;
+  padding: 6px 10px !important;
+  border-radius: 4px !important;
+  font-size: var(--bgrid-font-size, 13px) !important;
+  line-height: 20px !important;
+  color: inherit !important;
+  cursor: pointer !important;
+  transition: background-color 0.15s ease !important;
+}
+
+.bgrid-mui-editor-popup .MuiMenuItem-root:hover {
+  background-color: var(--bgrid-body-hover-bg, #f1f5f9) !important;
+}
+
+.bgrid-mui-editor-popup .MuiMenuItem-root.Mui-selected {
+  background-color: var(--bgrid-primary-color, #2563eb) !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
+
+.bgrid-mui-editor-popup .MuiMenuItem-root.Mui-selected:hover {
+  filter: brightness(0.95) !important;
+}
+
+/* ==========================================================================
+   MUI DatePicker Calendar
+   ========================================================================== */
+
+.bgrid-mui-editor-popup .MuiDateCalendar-root {
+  width: 270px !important;
+  height: auto !important;
+  min-height: 0 !important;
+  max-height: none !important;
+  padding: 6px 8px 10px !important;
+}
+
+.bgrid-mui-editor-popup .MuiPickersCalendarHeader-root {
+  min-height: 34px !important;
+  height: 34px !important;
+  padding: 0 4px !important;
+  margin: 0 !important;
+}
+
+.bgrid-mui-editor-popup .MuiPickersCalendarHeader-label {
+  font-size: var(--bgrid-font-size, 13px) !important;
+  font-weight: 600 !important;
+  color: inherit !important;
+}
+
+.bgrid-mui-editor-popup .MuiPickersArrowSwitcher-button {
+  width: 24px !important;
+  height: 24px !important;
+  padding: 0 !important;
+  color: var(--bgrid-body-color, #64748b) !important;
+}
+
+.bgrid-mui-editor-popup .MuiPickersArrowSwitcher-button svg {
+  width: 16px !important;
+  height: 16px !important;
+}
+
+.bgrid-mui-editor-popup .MuiDayCalendar-header {
+  display: grid !important;
+  grid-template-columns: repeat(7, 1fr) !important;
+  justify-items: center !important;
+  margin: 0 0 2px 0 !important;
+}
+
+.bgrid-mui-editor-popup .MuiDayCalendar-weekDayLabel {
+  width: 30px !important;
+  height: 24px !important;
+  margin: 0 !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  color: var(--bgrid-body-color, #64748b) !important;
+  display: inline-flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+}
+
+.bgrid-mui-editor-popup .MuiDayCalendar-slideTransition {
+  min-height: 200px !important;
+  height: 200px !important;
+  overflow: hidden !important;
+  position: relative !important;
+}
+
+.bgrid-mui-editor-popup .MuiDayCalendar-monthContainer {
+  position: relative !important;
+}
+
+.bgrid-mui-editor-popup .MuiDayCalendar-weekContainer {
+  display: grid !important;
+  grid-template-columns: repeat(7, 1fr) !important;
+  justify-items: center !important;
+  margin: 1px 0 !important;
+}
+
+.bgrid-mui-editor-popup .MuiPickerDay-root,
+.bgrid-mui-editor-popup .MuiPickersDay-root {
+  width: 30px !important;
+  height: 30px !important;
+  margin: 0 !important;
+  font-size: 12px !important;
+  border-radius: 6px !important;
+  color: inherit !important;
+}
+
+.bgrid-mui-editor-popup .MuiPickerDay-root:hover,
+.bgrid-mui-editor-popup .MuiPickersDay-root:hover {
+  background-color: var(--bgrid-body-hover-bg, #f1f5f9) !important;
+}
+
+.bgrid-mui-editor-popup .MuiPickerDay-root.Mui-selected,
+.bgrid-mui-editor-popup .MuiPickersDay-root.Mui-selected {
+  background-color: var(--bgrid-primary-color, #2563eb) !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
+
+.bgrid-mui-editor-popup .MuiPickerDay-root.MuiPickerDay-today,
+.bgrid-mui-editor-popup .MuiPickersDay-root.MuiPickersDay-today {
+  border: 1px solid var(--bgrid-primary-color, #2563eb) !important;
+}
+
+/* ==========================================================================
+   MUI ColorPicker Popover
+   ========================================================================== */
 
 .bgrid-mui-color-popup {
-  display: grid;
-  width: 240px;
-  gap: 10px;
-  padding: 12px;
+  display: grid !important;
+  width: 220px !important;
+  gap: 10px !important;
+  padding: 12px !important;
+  box-sizing: border-box !important;
 }
 
 .bgrid-mui-color-popup > input[type='color'] {
-  width: 100%;
-  height: 80px;
-  padding: 0;
-  border: 0;
-  background: transparent;
-  cursor: pointer;
+  width: 100% !important;
+  height: 36px !important;
+  padding: 2px !important;
+  border: 1px solid var(--bgrid-border-color-light, rgba(0, 0, 0, 0.12)) !important;
+  border-radius: 6px !important;
+  background-color: transparent !important;
+  cursor: pointer !important;
+  box-sizing: border-box !important;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease !important;
+}
+
+.bgrid-mui-color-popup > input[type='color']::-webkit-color-swatch-wrapper {
+  padding: 0 !important;
+}
+
+.bgrid-mui-color-popup > input[type='color']::-webkit-color-swatch {
+  border: none !important;
+  border-radius: 4px !important;
+}
+
+.bgrid-mui-color-popup > input[type='color']::-moz-color-swatch {
+  border: none !important;
+  border-radius: 4px !important;
+}
+
+.bgrid-mui-color-popup > input[type='color']:hover {
+  border-color: var(--bgrid-primary-color, #2563eb) !important;
 }
 
 .bgrid-mui-color-presets {
-  display: grid;
-  grid-template-columns: repeat(8, 1fr);
-  gap: 5px;
+  display: flex !important;
+  align-items: center !important;
+  gap: 8px !important;
+  flex-wrap: wrap !important;
 }
 
 .bgrid-mui-color-presets button {
-  aspect-ratio: 1;
-  border: 1px solid rgb(0 0 0 / 18%);
-  border-radius: 3px;
-  cursor: pointer;
+  display: block !important;
+  width: 24px !important;
+  height: 24px !important;
+  padding: 0 !important;
+  margin: 0 !important;
+  border: 1px solid rgba(0, 0, 0, 0.18) !important;
+  border-radius: 4px !important;
+  cursor: pointer !important;
+  font-size: 0 !important;
+  color: transparent !important;
+  line-height: 0 !important;
+  overflow: hidden !important;
+  text-indent: -9999px !important;
+  box-sizing: border-box !important;
+  transition: transform 0.15s ease, box-shadow 0.15s ease !important;
+}
+
+.bgrid-mui-color-presets button:hover {
+  transform: scale(1.12) !important;
+  box-shadow: 0 0 0 2px var(--bgrid-primary-color, #2563eb) !important;
+}
+
+.bgrid-mui-color-popup .MuiTextField-root {
+  width: 100% !important;
+}
+
+.bgrid-mui-color-popup .MuiInputBase-root {
+  height: 36px !important;
+  border-radius: 6px !important;
+  font-size: var(--bgrid-font-size, 13px) !important;
+}
+
+.bgrid-mui-color-popup .MuiInputBase-input {
+  padding: 6px 10px !important;
+  font-family: monospace !important;
+  font-size: var(--bgrid-font-size, 13px) !important;
+  letter-spacing: 0.5px !important;
+}
+
+.bgrid-mui-color-popup .MuiInputLabel-root {
+  font-size: 12px !important;
+  transform: translate(12px, -6px) scale(0.85) !important;
+}
+
+.bgrid-mui-color-popup .MuiButton-contained {
+  height: 32px !important;
+  font-size: 12px !important;
+  font-weight: 600 !important;
+  text-transform: none !important;
+  border-radius: 6px !important;
+  background-color: var(--bgrid-primary-color, #2563eb) !important;
+  box-shadow: none !important;
+}
+
+.bgrid-mui-color-popup .MuiButton-contained:hover {
+  filter: brightness(0.95) !important;
+  box-shadow: none !important;
+}
+
+/* ==========================================================================
+   MUI TimePicker Digital Clock & Action Bar
+   ========================================================================== */
+
+.bgrid-mui-editor-popup .MuiPickerPopper-paper:has(.MuiMultiSectionDigitalClock-root),
+.bgrid-mui-editor-popup:has(.MuiMultiSectionDigitalClock-root) .MuiPickerPopper-paper {
+  min-width: 165px !important;
+  width: 165px !important;
+}
+
+.bgrid-mui-editor-popup .MuiPickersLayout-root:has(.MuiMultiSectionDigitalClock-root),
+.bgrid-mui-editor-popup:has(.MuiMultiSectionDigitalClock-root) .MuiPickersLayout-root {
+  min-width: 100% !important;
+  width: 100% !important;
+}
+
+.bgrid-mui-editor-popup .MuiPickersLayout-contentWrapper {
+  width: 100% !important;
+  display: block !important;
+}
+
+.bgrid-mui-editor-popup .MuiMultiSectionDigitalClock-root {
+  width: 100% !important;
+  min-width: 140px !important;
+  display: flex !important;
+  max-height: 190px !important;
+  border-bottom: 1px solid var(--bgrid-border-color-light, rgba(0, 0, 0, 0.12)) !important;
+}
+
+.bgrid-mui-editor-popup .MuiMultiSectionDigitalClockSection-root {
+  flex: 1 1 50% !important;
+  width: 50% !important;
+  min-width: 0 !important;
+  padding: 4px 2px !important;
+  scrollbar-width: thin !important;
+}
+
+.bgrid-mui-editor-popup .MuiMultiSectionDigitalClockSection-root:first-of-type {
+  border-right: 1px solid var(--bgrid-border-color-light, rgba(0, 0, 0, 0.12)) !important;
+}
+
+.bgrid-mui-editor-popup .MuiMultiSectionDigitalClockSection-root:last-of-type {
+  border-left: none !important;
+}
+
+.bgrid-mui-editor-popup .MuiMultiSectionDigitalClockSection-item {
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  width: calc(100% - 6px) !important;
+  min-height: 28px !important;
+  height: 28px !important;
+  margin: 2px 3px !important;
+  padding: 0 !important;
+  font-size: var(--bgrid-font-size, 13px) !important;
+  border-radius: 4px !important;
+  text-align: center !important;
+  color: inherit !important;
+  transition: background-color 0.15s ease !important;
+}
+
+.bgrid-mui-editor-popup .MuiMultiSectionDigitalClockSection-item:hover {
+  background-color: var(--bgrid-body-hover-bg, #f1f5f9) !important;
+}
+
+.bgrid-mui-editor-popup .MuiMultiSectionDigitalClockSection-item.Mui-selected {
+  background-color: var(--bgrid-primary-color, #2563eb) !important;
+  color: #ffffff !important;
+  font-weight: 600 !important;
+}
+
+.bgrid-mui-editor-popup .MuiPickersLayout-actionBar {
+  display: flex !important;
+  justify-content: flex-end !important;
+  gap: 6px !important;
+  padding: 6px 8px !important;
+}
+
+.bgrid-mui-editor-popup .MuiPickersLayout-actionBar .MuiButton-root {
+  min-width: 46px !important;
+  height: 26px !important;
+  padding: 0 8px !important;
+  font-size: 11px !important;
+  font-weight: 600 !important;
+  border-radius: 4px !important;
+  text-transform: uppercase !important;
+}
+
+.bgrid-mui-editor-popup .MuiPickersLayout-actionBar .MuiButton-root:first-of-type {
+  color: var(--bgrid-body-color, #64748b) !important;
+}
+
+.bgrid-mui-editor-popup .MuiPickersLayout-actionBar .MuiButton-root:first-of-type:hover {
+  background-color: var(--bgrid-body-hover-bg, #f1f5f9) !important;
+}
+
+.bgrid-mui-editor-popup .MuiPickersLayout-actionBar .MuiButton-root:last-of-type {
+  color: var(--bgrid-primary-color, #2563eb) !important;
+}
+
+.bgrid-mui-editor-popup .MuiPickersLayout-actionBar .MuiButton-root:last-of-type:hover {
+  background-color: rgba(37, 99, 235, 0.08) !important;
+}
+
+/* ==========================================================================
+   Dark Theme Overrides
+   ========================================================================== */
+
+[data-bgrid-theme='dark'] .bgrid-mui-color-swatch,
+:root[data-theme='dark'] .bgrid-mui-color-swatch {
+  border-color: rgba(255, 255, 255, 0.22) !important;
+}
+
+[data-bgrid-theme='dark'] .bgrid-mui-select-editor .MuiSelect-select,
+[data-bgrid-theme='dark'] .bgrid-mui-date-editor .MuiInputBase-input,
+[data-bgrid-theme='dark'] .bgrid-mui-time-editor .MuiInputBase-input,
+[data-bgrid-theme='dark'] .bgrid-mui-date-editor .MuiPickersSectionList-section,
+[data-bgrid-theme='dark'] .bgrid-mui-time-editor .MuiPickersSectionList-section,
+[data-bgrid-theme='dark'] .bgrid-mui-date-editor .MuiPickersInputBase-sectionContent,
+[data-bgrid-theme='dark'] .bgrid-mui-time-editor .MuiPickersInputBase-sectionContent,
+[data-bgrid-theme='dark'] .bgrid-mui-date-editor .MuiPickersInputBase-separator,
+[data-bgrid-theme='dark'] .bgrid-mui-time-editor .MuiPickersInputBase-separator,
+[data-bgrid-theme='dark'] .bgrid-mui-color-value,
+:root[data-theme='dark'] .bgrid-mui-select-editor .MuiSelect-select,
+:root[data-theme='dark'] .bgrid-mui-date-editor .MuiInputBase-input,
+:root[data-theme='dark'] .bgrid-mui-time-editor .MuiInputBase-input,
+:root[data-theme='dark'] .bgrid-mui-date-editor .MuiPickersSectionList-section,
+:root[data-theme='dark'] .bgrid-mui-time-editor .MuiPickersSectionList-section,
+:root[data-theme='dark'] .bgrid-mui-date-editor .MuiPickersInputBase-sectionContent,
+:root[data-theme='dark'] .bgrid-mui-time-editor .MuiPickersInputBase-sectionContent,
+:root[data-theme='dark'] .bgrid-mui-date-editor .MuiPickersInputBase-separator,
+:root[data-theme='dark'] .bgrid-mui-time-editor .MuiPickersInputBase-separator,
+:root[data-theme='dark'] .bgrid-mui-color-value {
+  color: #f2f6fc !important;
+}
+
+[data-bgrid-theme='dark'] .bgrid-mui-select-editor .MuiSelect-icon,
+[data-bgrid-theme='dark'] .bgrid-mui-date-editor .MuiIconButton-root,
+[data-bgrid-theme='dark'] .bgrid-mui-time-editor .MuiIconButton-root,
+:root[data-theme='dark'] .bgrid-mui-select-editor .MuiSelect-icon,
+:root[data-theme='dark'] .bgrid-mui-date-editor .MuiIconButton-root,
+:root[data-theme='dark'] .bgrid-mui-time-editor .MuiIconButton-root {
+  color: #8391a8 !important;
+}
+
+[data-bgrid-theme='dark'] .bgrid-mui-date-editor .MuiIconButton-root:hover,
+[data-bgrid-theme='dark'] .bgrid-mui-time-editor .MuiIconButton-root:hover,
+:root[data-theme='dark'] .bgrid-mui-date-editor .MuiIconButton-root:hover,
+:root[data-theme='dark'] .bgrid-mui-time-editor .MuiIconButton-root:hover {
+  background-color: rgba(255, 255, 255, 0.08) !important;
+  color: var(--bgrid-primary-color, #60a5fa) !important;
+}
+
+[data-bgrid-theme='dark'] .bgrid-mui-color-editor:hover .bgrid-mui-color-swatch,
+:root[data-theme='dark'] .bgrid-mui-color-editor:hover .bgrid-mui-color-swatch {
+  border-color: rgba(255, 255, 255, 0.45) !important;
+  box-shadow: 0 0 0 1px rgba(255, 255, 255, 0.2) !important;
+}
+
+[data-bgrid-theme='dark'] .bgrid-mui-editor-popup.MuiPaper-root,
+[data-bgrid-theme='dark'] .bgrid-mui-editor-popup .MuiPaper-root,
+:root[data-theme='dark'] .bgrid-mui-editor-popup.MuiPaper-root,
+:root[data-theme='dark'] .bgrid-mui-editor-popup .MuiPaper-root {
+  border-color: rgba(255, 255, 255, 0.15) !important;
+  background-color: var(--bgrid-body-bg, #151f33) !important;
+  color: #f2f6fc !important;
+  box-shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.5), 0 8px 10px -6px rgba(0, 0, 0, 0.5) !important;
+}
+
+[data-bgrid-theme='dark'] .bgrid-mui-editor-popup .MuiMenuItem-root,
+:root[data-theme='dark'] .bgrid-mui-editor-popup .MuiMenuItem-root {
+  color: #f2f6fc !important;
+}
+
+[data-bgrid-theme='dark'] .bgrid-mui-editor-popup .MuiMenuItem-root:hover,
+:root[data-theme='dark'] .bgrid-mui-editor-popup .MuiMenuItem-root:hover {
+  background-color: #1e293b !important;
+}
+
+[data-bgrid-theme='dark'] .bgrid-mui-editor-popup .MuiMenuItem-root.Mui-selected,
+:root[data-theme='dark'] .bgrid-mui-editor-popup .MuiMenuItem-root.Mui-selected {
+  background-color: var(--bgrid-primary-color, #2563eb) !important;
+  color: #ffffff !important;
+}
+
+[data-bgrid-theme='dark'] .bgrid-mui-editor-popup .MuiPickersCalendarHeader-label,
+:root[data-theme='dark'] .bgrid-mui-editor-popup .MuiPickersCalendarHeader-label {
+  color: #f2f6fc !important;
+}
+
+[data-bgrid-theme='dark'] .bgrid-mui-editor-popup .MuiPickersArrowSwitcher-button,
+:root[data-theme='dark'] .bgrid-mui-editor-popup .MuiPickersArrowSwitcher-button {
+  color: #8391a8 !important;
+}
+
+[data-bgrid-theme='dark'] .bgrid-mui-editor-popup .MuiDayCalendar-weekDayLabel,
+:root[data-theme='dark'] .bgrid-mui-editor-popup .MuiDayCalendar-weekDayLabel {
+  color: #8391a8 !important;
+}
+
+[data-bgrid-theme='dark'] .bgrid-mui-editor-popup .MuiPickerDay-root,
+[data-bgrid-theme='dark'] .bgrid-mui-editor-popup .MuiPickersDay-root,
+:root[data-theme='dark'] .bgrid-mui-editor-popup .MuiPickerDay-root,
+:root[data-theme='dark'] .bgrid-mui-editor-popup .MuiPickersDay-root {
+  color: #f2f6fc !important;
+}
+
+[data-bgrid-theme='dark'] .bgrid-mui-editor-popup .MuiPickerDay-root:hover,
+[data-bgrid-theme='dark'] .bgrid-mui-editor-popup .MuiPickersDay-root:hover,
+:root[data-theme='dark'] .bgrid-mui-editor-popup .MuiPickerDay-root:hover,
+:root[data-theme='dark'] .bgrid-mui-editor-popup .MuiPickersDay-root:hover {
+  background-color: #1e293b !important;
+}
+
+[data-bgrid-theme='dark'] .bgrid-mui-editor-popup .MuiPickerDay-root.Mui-selected,
+[data-bgrid-theme='dark'] .bgrid-mui-editor-popup .MuiPickersDay-root.Mui-selected,
+:root[data-theme='dark'] .bgrid-mui-editor-popup .MuiPickerDay-root.Mui-selected,
+:root[data-theme='dark'] .bgrid-mui-editor-popup .MuiPickersDay-root.Mui-selected {
+  background-color: var(--bgrid-primary-color, #2563eb) !important;
+  color: #ffffff !important;
+}
+
+[data-bgrid-theme='dark'] .bgrid-mui-color-popup > input[type='color'],
+:root[data-theme='dark'] .bgrid-mui-color-popup > input[type='color'] {
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+[data-bgrid-theme='dark'] .bgrid-mui-color-presets button,
+:root[data-theme='dark'] .bgrid-mui-color-presets button {
+  border-color: rgba(255, 255, 255, 0.25) !important;
+}
+
+[data-bgrid-theme='dark'] .bgrid-mui-color-popup .MuiOutlinedInput-notchedOutline,
+:root[data-theme='dark'] .bgrid-mui-color-popup .MuiOutlinedInput-notchedOutline {
+  border-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+[data-bgrid-theme='dark'] .bgrid-mui-color-popup .MuiInputBase-input,
+:root[data-theme='dark'] .bgrid-mui-color-popup .MuiInputBase-input {
+  color: #f2f6fc !important;
+}
+
+[data-bgrid-theme='dark'] .bgrid-mui-color-popup .MuiInputLabel-root,
+:root[data-theme='dark'] .bgrid-mui-color-popup .MuiInputLabel-root {
+  color: #8391a8 !important;
+  background-color: var(--bgrid-body-bg, #151f33) !important;
+  padding: 0 4px !important;
+}
+
+[data-bgrid-theme='dark'] .bgrid-mui-editor-popup .MuiMultiSectionDigitalClock-root,
+:root[data-theme='dark'] .bgrid-mui-editor-popup .MuiMultiSectionDigitalClock-root {
+  border-bottom-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+[data-bgrid-theme='dark'] .bgrid-mui-editor-popup .MuiMultiSectionDigitalClockSection-root:first-of-type,
+:root[data-theme='dark'] .bgrid-mui-editor-popup .MuiMultiSectionDigitalClockSection-root:first-of-type {
+  border-right-color: rgba(255, 255, 255, 0.15) !important;
+}
+
+[data-bgrid-theme='dark'] .bgrid-mui-editor-popup .MuiMultiSectionDigitalClockSection-item,
+:root[data-theme='dark'] .bgrid-mui-editor-popup .MuiMultiSectionDigitalClockSection-item {
+  color: #f2f6fc !important;
+}
+
+[data-bgrid-theme='dark'] .bgrid-mui-editor-popup .MuiMultiSectionDigitalClockSection-item:hover,
+:root[data-theme='dark'] .bgrid-mui-editor-popup .MuiMultiSectionDigitalClockSection-item:hover {
+  background-color: #1e293b !important;
+}
+
+[data-bgrid-theme='dark'] .bgrid-mui-editor-popup .MuiMultiSectionDigitalClockSection-item.Mui-selected,
+:root[data-theme='dark'] .bgrid-mui-editor-popup .MuiMultiSectionDigitalClockSection-item.Mui-selected {
+  background-color: var(--bgrid-primary-color, #2563eb) !important;
+  color: #ffffff !important;
+}
+
+[data-bgrid-theme='dark'] .bgrid-mui-editor-popup .MuiPickersLayout-actionBar .MuiButton-root:first-of-type,
+:root[data-theme='dark'] .bgrid-mui-editor-popup .MuiPickersLayout-actionBar .MuiButton-root:first-of-type {
+  color: #8391a8 !important;
+}
+
+[data-bgrid-theme='dark'] .bgrid-mui-editor-popup .MuiPickersLayout-actionBar .MuiButton-root:first-of-type:hover,
+:root[data-theme='dark'] .bgrid-mui-editor-popup .MuiPickersLayout-actionBar .MuiButton-root:first-of-type:hover {
+  background-color: #1e293b !important;
+}
+
+[data-bgrid-theme='dark'] .bgrid-mui-editor-popup .MuiPickersLayout-actionBar .MuiButton-root:last-of-type,
+:root[data-theme='dark'] .bgrid-mui-editor-popup .MuiPickersLayout-actionBar .MuiButton-root:last-of-type {
+  color: #6ea8ff !important;
+}
+
+[data-bgrid-theme='dark'] .bgrid-mui-editor-popup .MuiPickersLayout-actionBar .MuiButton-root:last-of-type:hover,
+:root[data-theme='dark'] .bgrid-mui-editor-popup .MuiPickersLayout-actionBar .MuiButton-root:last-of-type:hover {
+  background-color: rgba(110, 168, 255, 0.12) !important;
 }
